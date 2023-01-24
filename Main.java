@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
 
-        SalesPerson[] salesPeople = new SalesPerson[6];
+        SalesPerson[] salesPeople = new SalesPerson[3];
         salesPeople[0] = new SalesPerson("100");
         salesPeople[1] = new SalesPerson("101");
         salesPeople[2] = new SalesPerson("102");
@@ -19,11 +19,13 @@ public class Main {
         System.out.println(salesPeople[1].getSalesHistory(0).getValue());
         System.out.println(salesPeople[0].calcTotalSales());
 
+        System.out.println(highest(salesPeople));
+
 
 
     }
 
-    public String highest(SalesPerson[] sp){
+    static String highest(SalesPerson[] sp){
         String bestId = "";
         double highVal = 0.0;
         for(SalesPerson s: sp){
@@ -35,7 +37,7 @@ public class Main {
         return bestId;
     }
 
-    public void addSales(Sales s, String id, SalesPerson[] sp){
+    static void addSales(Sales s, String id, SalesPerson[] sp){
         for (SalesPerson p : sp){
             if(p.getId().equals(id)){
                 p.setSalesHistory(s);
